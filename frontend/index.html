@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TruthLens — AI Fake News Detection</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="signal-canvas"></canvas>
+
+  <nav class="nav">
+    <div class="brand"><div class="logo">TL</div><span>TruthLens</span></div>
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <a href="account.html">Account</a>
+    <span class="spacer"></span>
+    <select id="lang">
+      <option value="en" selected>English</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+    <button id="theme-toggle" class="icon-btn">🌓 Theme</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <h1><span class="gold">TruthLens</span> — AI-Powered Fake News & Media Detection</h1>
+        <p class="subtitle">Detect misinformation across <span class="gold">text, image,</span> and <span class="gold">video</span> with AI confidence scoring.</p>
+
+        <div class="modes">
+          <button class="mode active">Text</button>
+          <button class="mode">Image</button>
+          <button class="mode">Video</button>
+        </div>
+
+        <div class="confidence">
+          <div class="gauge" data-label="0%"></div>
+          <div id="analysis-out">Enter content to analyze. Confidence score appears here.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="input-bar">
+    <button id="btn-upload" class="chip"><div class="icon">📁</div>Upload</button>
+    <button id="btn-mic" class="chip"><div class="icon">🎤</div>Mic</button>
+    <input id="query" type="text" placeholder="Paste text or drop media to analyze truthfulness..." />
+    <button id="analyze" class="btn primary">Analyze</button>
+    <button id="btn-settings" class="chip"><div class="icon">⚙️</div>Settings</button>
+  </div>
+
+  <footer class="footer">© <span id="year"></span> TruthLens — Prototype UI</footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account — TruthLens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="signal-canvas"></canvas>
+  <nav class="nav">
+    <div class="brand"><div class="logo">TL</div><span>TruthLens</span></div>
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <span class="spacer"></span>
+    <button id="theme-toggle" class="icon-btn">🌓 Theme</button>
+  </nav>
+
+  <div class="form">
+    <h1>Account Settings</h1>
+    <label>Display Name</label>
+    <input value="Analyst">
+    <label>Email</label>
+    <input value="you@example.com">
+    <label>Preferred Mode</label>
+    <select>
+      <option>Text</option>
+      <option>Image</option>
+      <option>Video</option>
+    </select>
+    <button class="btn primary" onclick="alert('Saved (demo)')">Save</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — TruthLens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="signal-canvas"></canvas>
+  <nav class="nav">
+    <div class="brand"><div class="logo">TL</div><span>TruthLens</span></div>
+    <a href="index.html">Home</a>
+    <a href="account.html">Account</a>
+    <span class="spacer"></span>
+    <button id="theme-toggle" class="icon-btn">🌓 Theme</button>
+  </nav>
+
+  <section class="faq">
+    <h1>FAQ</h1>
+    <details open><summary>How does TruthLens calculate confidence?</summary><p>It analyzes linguistic, visual, and metadata signals to estimate reliability. This prototype uses simulated AI scores.</p></details>
+    <details><summary>Which content types are supported?</summary><p>Currently text, images, and video frames — optimized for speed.</p></details>
+    <details><summary>How accurate is it?</summary><p>Prototype accuracy depends on input quality and real model backend integration.</p></details>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

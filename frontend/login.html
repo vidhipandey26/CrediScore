@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login — TruthLens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="signal-canvas"></canvas>
+  <nav class="nav">
+    <div class="brand"><div class="logo">TL</div><span>TruthLens</span></div>
+    <a href="index.html">Home</a>
+    <a href="signup.html">Sign Up</a>
+    <span class="spacer"></span>
+    <button id="theme-toggle" class="icon-btn">🌓 Theme</button>
+  </nav>
+
+  <form class="form" onsubmit="event.preventDefault();alert('Logged in (demo)');location.href='account.html'">
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Log in to continue your analyses.</p>
+    <label>Email</label>
+    <input type="email" required>
+    <label>Password</label>
+    <input type="password" required>
+    <button class="btn primary">Login</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
