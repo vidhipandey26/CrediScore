@@ -40,7 +40,8 @@ def compute_metrics(p, y, t, s):
         pp, yy, ss = p[m], y[m], s[m]
         res[name] = {"n": int(m.sum()), "acc": float(((pp > 0.5) == yy).mean()),
                      "auc": _safe(roc_auc_score, yy, pp), "ap": _safe(average_precision_score, yy, pp),
-                     "per_source_acc": {str(k): float(((pp[ss == k] > 0.5) == yy[ss == k]).mean()) for k in np.unique(ss)}}
+                     "per_source_acc": {str(k): float(((pp[ss == k] > 0.5) == yy[ss == k]).mean()) for k in np.unique(ss)},
+                     "per_source_auc": {str(k): _safe(roc_auc_score, yy[ss == k], pp[ss == k]) for k in np.unique(ss)}}
     return res
 
 
