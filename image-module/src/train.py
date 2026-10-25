@@ -10,8 +10,8 @@ from src.model import TruthLensImage
 from src.utils import compute_metrics, load_model, predict, save_weights, score, seed_all
 
 
-def make_loader(manifest, split, train, bs, workers=2, max_n=None, aug=1.0):
-    ds = FakeDataset(manifest, split, train=train, aug=aug)
+def make_loader(manifest, split, train, bs, workers=2, max_n=None, aug=1.0, blur_p=None, blur_max=1.5):
+    ds = FakeDataset(manifest, split, train=train, aug=aug, blur_p=blur_p, blur_max=blur_max)
     if len(ds) == 0:
         return None
     if max_n and len(ds) > max_n:
@@ -21,6 +21,8 @@ def make_loader(manifest, split, train, bs, workers=2, max_n=None, aug=1.0):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--blur_p", type=float, default=None, help="blur ki probability alag se (default: 0.2*aug)")
+    ap.add_argument("--blur_max", type=float, default=1.5, help="blur ka max radius")
     ap.add_argument("--manifest", required=True)
     ap.add_argument("--out", default="runs/exp1")
     ap.add_argument("--epochs", type=int, default=5)
@@ -39,7 +41,7 @@ def main():
     seed_all(a.seed)
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     print("device:", dev)
-    train_dl = make_loader(a.manifest, "train", True, a.bs, a.workers, a.max_train, a.aug)
+    train_dl = make_loader(a.manifest, "train", True, a.bs, a.workers, a.max_train, a.aug, a.blur_p, a.blur_max)
     val_dl = make_loader(a.manifest, "val", False, a.bs, a.workers, a.max_train)
     ood_dl = make_loader(a.manifest, "val_ood", False, a.bs, a.workers, a.max_train)
 
